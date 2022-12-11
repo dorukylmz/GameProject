@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor.UIElements;
 using UnityEngine;
 
+
 public class Walking : MonoBehaviour
 {
     [SerializeField]private float speed = 5f;
@@ -38,14 +39,28 @@ public class Walking : MonoBehaviour
         //sýnýrsýz uçmasýný istemediðim için yere deðip deðmediðini anlamak için böyle bir fonksiyon yazdým Fakat kullanýcýnýn merezi 
         //dýþarýda kalabilir emin deðilim
         //alttaki kýsýmda box colider kullanýcýnýn objesidir karýþtýrýlmasýn. Merkezi size ý ve dokunduðu yeri anlamasý için vector2.down u kullandým
+        //Walljump yapmak için saðdaki soldaki coliderlarý da aldým. 
         RaycastHit2D raycastHit2 = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down , 0.1f, layerMask);
+        if (raycastHit2.collider == null)
+        {
+            raycastHit2 = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.right, .1f, layerMask);
+            if (raycastHit2.collider == null)
+            {
+                raycastHit2 = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.left, .1f, layerMask);
+                return raycastHit2.collider != null;    
+
+            }
+            return raycastHit2.collider!=null; 
+            
+        }
         
-        Debug.Log("yere dokundu");
-        Debug.Log(raycastHit2);
-        return raycastHit2.collider != null;
+        return raycastHit2.collider!=null;
+        
     }
+
     private void playerMovement()
     {
+        
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rigidbody2D.velocity = new Vector2(-speed, rigidbody2D.velocity.y);
@@ -67,6 +82,8 @@ public class Walking : MonoBehaviour
         }
         
         }
-    }
+        
+        }
+    
         
 
