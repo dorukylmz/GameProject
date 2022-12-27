@@ -19,6 +19,9 @@ public class grapplingHook : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            Vector2 mausePos= Input.mousePosition;
+            //raycast ile obje tipi seçtirip hooku ona göre attýracaðým
+
             HookOn();
 
         }

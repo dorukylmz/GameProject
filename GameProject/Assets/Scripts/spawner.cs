@@ -6,11 +6,11 @@ public class spawner : MonoBehaviour
 {
     //dýþarýdan gelen tanýmlý obje
     [SerializeField] private GameObject newWall;
-    [SerializeField] private float maxHeight;
-    [SerializeField] private float minHeight;
+    [SerializeField] private float maxHeight=1.0f;
+    [SerializeField] private float minHeight=0.0f;
     //lenght deðildi neydi la bunun adý format atayým ileride !!!!!!!!!!!!!!!!
-    [SerializeField] private float maxLenght;
-    [SerializeField] private float minLenght;
+    [SerializeField] private float maxLenght=1.0f;
+    [SerializeField] private float minLenght = 0.0f;
     private Vector2 position;
     // Start is called before the first frame update
     void Start()
