@@ -15,7 +15,15 @@ public class MainMenuScript : MonoBehaviour
 
     public void Settings()
     {
-        SceneManager.LoadScene("Settingspage");
+        if (SceneManager.GetActiveScene().name == "DayMenu")
+        {
+            SceneManager.LoadScene("DayMenuSettings");
+        }
+        else
+        {
+            SceneManager.LoadScene("NightMenuSettings");
+        }
+
 
     }
 

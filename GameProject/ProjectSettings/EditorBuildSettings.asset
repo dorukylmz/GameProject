@@ -18,9 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/NightMenu.unity
     guid: 0067f137c84886041a8f59189897dc84
   - enabled: 1
-    path: Assets/Scenes/NightSettingspage.unity
+    path: Assets/Scenes/NightMenuSettings.unity
     guid: ee9faee3f54ac6647bf4442f291e1fbe
   - enabled: 1
-    path: Assets/Scenes/DayMenuSettingsPage.unity
-    guid: 5930cabde7e0c9c44be0e443551d128d
+    path: Assets/Scenes/DayMenuSettings.unity
+    guid: 65e0fc77bae199e4885c6c601e686a0e
   m_configObjects: {}

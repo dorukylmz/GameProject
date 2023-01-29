@@ -23,7 +23,9 @@ public class Walking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Player objesini bul
         rigidbody2D = transform.GetComponent<Rigidbody2D>();
+        //coliderlarý bul
         boxCollider2D=transform.GetComponent<BoxCollider2D>();
     }
 
@@ -61,13 +63,13 @@ public class Walking : MonoBehaviour
     private void playerMovement()
     {
         
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
             rigidbody2D.velocity = new Vector2(-speed, rigidbody2D.velocity.y);
         }
         else
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.D))
             {
                 rigidbody2D.velocity = new Vector2(+speed, rigidbody2D.velocity.y);
             }
